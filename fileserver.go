@@ -8,7 +8,9 @@ import (
 	"strconv"
 )
 
-const usage string = "fileserver usage:\neasy_server [-port port] [-root rootdirectory]\nIf has no argument, will use ./ as root folder as default, and 31100 as default port.\nUse \"gofileserver -help\" to show this message."
+const usage string = `fileserver usage:\neasy_server [-port port] [-root rootdirectory]\n
+If has no argument, will use ./ as root folder as default, and 31100 as default port.\n
+Use \"gofileserver -help\" to show this message.`
 
 var (
 	svrHandler http.Handler
