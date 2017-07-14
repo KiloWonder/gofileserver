@@ -27,10 +27,8 @@ func main() {
 	}
 
 	svrHandler = http.FileServer(http.Dir(*rootDir))
-	//http.Handle("/file", svrHandler)
 	http.HandleFunc("/", RecordServer)
 	println("#Server: Running http file server...\n#Server: Root folder is: " + *rootDir, "\n#Server: Port is :", *port)
-	//err := http.ListenAndServe(":"+strconv.Itoa(*port), svrHandler)
 	err := http.ListenAndServe(":"+strconv.Itoa(*port), nil)
 	if err != nil {
 		log.Fatal("\n#Server: LstenAndServer: ", err, "\n#Server: port is :", string(*port))
