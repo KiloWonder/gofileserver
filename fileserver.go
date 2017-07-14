@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"time"
 )
 
 const usage string = `fileserver usage:\neasy_server [-port port] [-root rootdirectory]\n
@@ -36,7 +37,7 @@ func main() {
 }
 
 func RecordServer(w http.ResponseWriter, req *http.Request) {
-	println("# INFO: ")
+	println("# INFO: ", time.Now().Format("2006-01-02 15:04:05 -0700 MST"))
 	println("        Remote address is : ", req.RemoteAddr)
 	println("        Request URL is :    ", req.URL.Path)
 	println()
